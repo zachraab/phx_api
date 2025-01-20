@@ -12,6 +12,7 @@ defmodule PhxApiWeb.PageController do
       %{id: 1, name: "Alice", email: "alice@email.com"},
       %{id: 2, name: "Bob", email: "bob@email.com"},
     ]
-    render(conn, :users, users: users, layout: false)
+    # render(conn, :users, users: users, layout: false)
+    json(conn, %{users: users})
   end
 end

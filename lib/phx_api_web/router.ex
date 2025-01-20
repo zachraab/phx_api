@@ -21,6 +21,11 @@ defmodule PhxApiWeb.Router do
     get "/users", PageController,:users
   end
 
+  scope "/api", PhxApiWeb do
+    pipe_through :api
+    resources "/posts", PostController, except: [:new, :edit]
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", PhxApiWeb do
   #   pipe_through :api
